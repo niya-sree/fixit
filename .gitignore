@@ -1,0 +1,12 @@
+.env*
+.logs*
+dist/*
+Build/*
+node-modules/*
+logs/
+.vscode/
+.idea/
+docker-compose*
+coverage/
+.env.*
+
