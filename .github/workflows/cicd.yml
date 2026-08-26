@@ -29,13 +29,13 @@ jobs:
         run: npm test
 
       - name: Build Docker image
-        run : docker build -t ${{ secrets.DOCKER_USERNAME }}/fixit:v1 .
+        run : docker build -t ${{ secrets.docker.DOCKER_USERNAME }}/fixit:v1 .
 
       - name: Log In Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ secret.DOCKER_USERNAME }}
-          Password: ${{ secret.DOCKER_TOKEN_KEY }}
+          username: ${{ secret.docker.DOCKER_USERNAME }}
+          Password: ${{ secret.docker.DOCKER_TOKEN_KEY }}
 
       - name: Push Docker Image
-        run : docker push ${{ secret.DOCKER_USERNAME }}/fixit:v1
+        run : docker push ${{ secret.docker.DOCKER_USERNAME }}/fixit:v1
