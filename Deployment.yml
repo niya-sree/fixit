@@ -18,3 +18,7 @@ spec:
           image: fixit:v1
           ports:
             - containerPort: 3000
+          
+          envFrom:
+            - configMapRef:
+                name: fixit-config
