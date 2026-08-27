@@ -4,6 +4,7 @@ metadata:
   name: fixit
 spec:
   replicas: 2
+  
   selector:
     matchLabels:
       app: fixit
@@ -11,10 +12,10 @@ spec:
     metadata:
       labels:
         app: fixit
-  spec:
-    containers:
-      - name: fixit
-        image: fixit:v1
-        ports:
-          - port: 3000
-            containerPort: 3000
+    spec:
+      containers:
+        - name: fixit
+          image: fixit:v1
+          ports:
+            - port: 3000
+              containerPort: 3000
