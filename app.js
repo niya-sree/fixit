@@ -1,5 +1,7 @@
 const http = require("http");
-const PORT = process.env.PORT || 3000;
+const appName = process.env.APP_NAME;
+const appENV = process.env.APP_ENV;
+const PORT = process.env.APP_PORT || 3000;
 http.createServer((req, res) => {
   if (req.url === "/health") { 
     res.writeHead(200); 
