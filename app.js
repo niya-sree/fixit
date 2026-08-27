@@ -8,5 +8,7 @@ http.createServer((req, res) => {
     return res.end("ok");
   }
   res.writeHead(200); 
-  res.end("Service running\n");
-}).listen(PORT, "0.0.0.0" , () => console.log(`up on ${PORT}`));
+  res.end(`${appName} running in ${appENV}\n`);
+}).listen(PORT, "0.0.0.0" , () => {
+  console.log(`${appName} up on ${PORT} in ${appENV}`);
+});
