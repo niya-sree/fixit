@@ -17,5 +17,4 @@ spec:
         - name: fixit
           image: fixit:v1
           ports:
-            - port: 3000
-              containerPort: 3000
+            - containerPort: 3000
