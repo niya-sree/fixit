@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: fixit-cornjob
+spec:
+  schedule: "*/1 * * * *"
+
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: fixit-cron
+              image: fixit:v2
+              command: [ "node", "-e" ]
+              args:
+                - |
+                  console.log("Fixit CornJob Started");
+                  console.log("Scheduled task running...");
+                  console.log("Fixit CornJob completed!");
+          restartPolicy: Never        

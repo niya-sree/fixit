@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: Job
+metadata: 
+  name: fixit-job
+spec:
+  template:
+    spec:
+      containers:
+        - name: fixit
+          image: fixit:v2
+          command: [ "node", "-e" ]
+          args:
+            - |
+              console.log("Fixit Job Started");
+              console.log("Doing some work...");
+              setTimeout(() => {
+                console.log("Fixit Job Completed!");
+              }, 5000);
+      restartPolicy: Never
+  backoffLimit: 3    
+
