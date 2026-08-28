@@ -43,3 +43,10 @@ spec:
             limits:
               cpu: "500m"
               memory: "256Mi"
+          volumeMounts:
+            - name: fixit-storage
+              mountPath: /data
+      volumes:
+        - name: fixit-storage
+          persistentVolumeClaim:
+            claimName: fixit-pvc
