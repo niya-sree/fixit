@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fixit-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fixit-api
+  template:
+    metadata:
+      labels:
+        app: fixit-api
+    spec:
+      containers:
+        - name: fixit-api
+          image: node:22-alpine
+          imagePullPolicy: IfNotPresent
+          command: [ "node", "-e" ]
+          args:
+            - |
+              const http = require ("http");
+
+              const server = http.createServer((req, res) => {
+                res.writeHead(200, {"Content-Type": "text/plain"});
+                res.end("Hello from Fixit API\n");
+              });
+
+              server.listen(3000, "0.0.0.0", () => {
+                console.log("Fixit API is running on port 3000");
+              });  
+          ports:
+            - containerPort: 3000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fixit-api
+spec:
+  selector:
+    app: fixit-api
+  ports:
+    - port: 3000
+      targetPort: 3000
+  type: ClusterIP
