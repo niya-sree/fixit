@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: init-node-app
+spec:
+
+  volumes:
+    - name: node-data
+      emptyDir: {}
+
+  initContainers:
+    - name: init-node
+      image: node:22-alpine
+
+      command:
+        - sh
+        - -c
+        - |
+          echo "Node.js application initialized" > /shared/startup.txt
+
+      volumeMounts:
+        - name: node-data
+          mountPath: /shared
+
+  containers:
+    - name: node-app
+      image: node:22-alpine
+      command:
+        - sh
+        - -c
+        - |
+          cat /shared/startup.txt
+          sleep 3600
+
+      volumeMounts:
+        - name: node-data
+          mountPath: /shared    
