@@ -1,0 +1,15 @@
+Learn to troubleshoot:
+
+ Pod stuck in Pending
+ CrashLoopBackOff
+ ImagePullBackOff
+ CreateContainerConfigError
+ OOMKilled
+ Pod failing readiness/liveness
+ Service not reachable
+ DNS not working
+ Ingress not working
+ PVC stuck in Pending
+ Node NotReady
+ Scheduling failures
+ NetworkPolicy blocking traffic

@@ -1,25 +1,18 @@
-Pods
-Deployment
-Service
-Service Discovery
-HPA
-ClusterIP
-Ingress
-NetworkPolicy
-Rolling Update
-Rollback
-Liveness
-Readiness
-StatefulSet
-PV
-PVC
-StorageClass
-Jobs
-CronJobs
-ConfigMaps
-Secrets
-Requests
-Limits
-RBAC
-Namespaces
-
+1. Pods → 
+2. Deployments → 
+3. Services → 
+4. Service Discovery → 
+5. Namespaces → 
+6. ConfigMaps & Secrets → 
+7. Requests & Limits → 
+8. Liveness & Readiness → 
+9. Rolling Update & Rollback → 
+10. HPA → 
+11. Ingress → 
+12. Storage (PV/PVC/StorageClass) → 
+13. StatefulSet → 
+14. Jobs/CronJobs → 
+15. DaemonSet → 
+16. RBAC → 
+17. NetworkPolicy → 
+18. Taints & Tolerations
