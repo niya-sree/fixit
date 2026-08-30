@@ -1,25 +1,22 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: fixit-api-ingress
+  name: fixit-api-egress
   namespace: fixit-dev
 spec:
   podSelector:
     matchLabels:
-      app: fixit-api
+      app: fixit
 
   policyTypes:
-    - Ingress
-
-  ingress:
-    - from:
+    - Egress
+  
+  egress:
+    - to:
         - podSelector:
             matchLabels:
-              app: fixit
+              app: fixit-api
 
       ports:
         - protocol: TCP
           port: 3000
-
-
-

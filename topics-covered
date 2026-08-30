@@ -1,0 +1,25 @@
+Pods
+Deployment
+Service
+Service Discovery
+HPA
+ClusterIP
+Ingress
+NetworkPolicy
+Rolling Update
+Rollback
+Liveness
+Readiness
+StatefulSet
+PV
+PVC
+StorageClass
+Jobs
+CronJobs
+ConfigMaps
+Secrets
+Requests
+Limits
+RBAC
+Namespaces
+
