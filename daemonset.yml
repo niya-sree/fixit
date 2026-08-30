@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: fixit-agent
+  namespace: fixit-dev
+
+spec:
+  selector:
+    matchLabels:
+      app: fixit-agent
+
+  template:
+    metadata:
+      labels:
+        app: fixit-agent
+
+    spec:
+      nodeSelector:
+        kubernetes.io/os: linux
+
+      tolerations:
+        - key: "dedicated"
+          operator: "Equal"
+          value: "testing"
+          effect: "NoSchedule"
+
+      containers:
+        - name: agent
+          image: busybox:1.36
+          command:
+            - sh
+            - -c
+            - |
+              while true; do
+                echo "Fixit agent running on $(hostname)"
+                sleep 30
+              done  
