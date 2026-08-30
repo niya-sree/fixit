@@ -15,4 +15,6 @@
 15. DaemonSet → 
 16. RBAC → 
 17. NetworkPolicy → 
-18. Taints & Tolerations
+18. Taints & Tolerations →
+19. Init Containers →
+20. Sidecar Containers →
