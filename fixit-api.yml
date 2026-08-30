@@ -12,6 +12,7 @@ spec:
       labels:
         app: fixit-api
     spec:
+      serviceAccountName: fixit-reader
       containers:
         - name: fixit-api
           image: node:22-alpine

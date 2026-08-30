@@ -1,36 +1,30 @@
-1. Kubernetes Architecture
-        ↓
-2. Pods
-        ↓
-3. Deployment + ReplicaSet
-        ↓
-4. Labels + Selectors
-        ↓
-5. Services
-        ↓
-6. Networking + Service Discovery
-        ↓
-7. ClusterIP
-        ↓
-8. Ingress
-        ↓
-9. ConfigMap + Secrets
-        ↓
-10. Liveness + Readiness
-        ↓
-11. Rolling Update + Rollback
-        ↓
-12. HPA
-        ↓
-13. NetworkPolicy
-        ↓
-14. Volumes
-        ↓
-15. PV + PVC + StorageClass
-        ↓
-16. StatefulSet
-        ↓
-17. Jobs
-        ↓
-18. CronJobs
+Pods + Deployment                 ✅
+Service + Networking              ✅
+Service Discovery                 ✅
+HPA                               ✅
+ClusterIP + Ingress               ✅
+NetworkPolicy                     ✅
+Rolling Update + Rollback         ✅
+Liveness + Readiness              ✅
+StatefulSet                       ✅
+PV + PVC                          ✅
+Jobs + CronJob                    ✅
+ConfigMaps + Secrets              ✅
+Requests + Limits                 ✅
+Volumes + StorageClass             ✅
+
+              ↓ NEXT
+
+Namespaces                         ⬅️ NEXT
+RBAC
+Taints + Tolerations
+Affinity / Anti-Affinity
+DaemonSet
+Init Containers
+Helm
+Security
+Troubleshooting
+Monitoring + Logging
+EKS / AKS / GKE
+CI/CD + Kubernetes
 
