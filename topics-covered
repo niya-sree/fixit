@@ -18,3 +18,4 @@
 18. Taints & Tolerations →
 19. Init Containers →
 20. Sidecar Containers →
+21. ServiceAccount →
